@@ -1,14 +1,14 @@
 import React from "react";
 
-import "./Toggle.css";
+import style from "./Toggle.module.css";
 
 const Toggle = props => {
     return (
         <div
             onClick={props.onClick}
-            className={`container ${props.isOn ? "active" : ""}`}
+            className={`${style.container} ${props.isOn ? style.active : ""}`}
         >
-            <div className="switch" />
+            <div className={style.switch} />
         </div>
     );
 };
