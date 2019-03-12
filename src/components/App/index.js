@@ -6,34 +6,51 @@ import Toggle from "../Toggle";
 import Inputs from "../Inputs";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {/* 1 */}
+    constructor(props) {
+        super(props);
 
-          <Toggle />
-          <Toggle />
+        this.state = {
+            isOn: false
+        };
+    }
 
-          {/* 2 */}
+    handleClick = () => {
+        this.setState(state => ({
+            isOn: !state.isOn
+        }));
+    };
 
-          <Inputs />
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <header className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <p>
+                        Edit <code>src/App.js</code> and save to reload.
+                    </p>
+                    <a
+                        className="App-link"
+                        href="https://reactjs.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Learn React
+                    </a>
+                    {/* 1 */}
+
+                    <Toggle onClick={this.handleClick} isOn={this.state.isOn} />
+                    <Toggle
+                        onClick={this.handleClick}
+                        isOn={!this.state.isOn}
+                    />
+
+                    {/* 2 */}
+
+                    <Inputs />
+                </header>
+            </div>
+        );
+    }
 }
 
 export default App;
