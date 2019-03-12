@@ -12,8 +12,7 @@ class Inputs extends React.Component {
     }
 
     handleChange = event => {
-        const { value } = event.target;
-        const { name } = event.target;
+        const { name, value } = event.target;
         this.setState(() => ({
             [name]: value
         }));
