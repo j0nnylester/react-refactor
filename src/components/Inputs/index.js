@@ -1,4 +1,5 @@
 import React from "react";
+import style from "./Inputs.module.css";
 
 class Inputs extends React.Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class Inputs extends React.Component {
         return (
             <form>
                 <input
+                    className={style.input}
                     name="username"
                     placeholder="username"
                     value={this.state.username}
@@ -30,6 +32,7 @@ class Inputs extends React.Component {
                     type="text"
                 />
                 <input
+                    className={style.input}
                     name="email"
                     placeholder="email"
                     value={this.state.email}
@@ -37,6 +40,7 @@ class Inputs extends React.Component {
                     type="text"
                 />
                 <input
+                    className={style.input}
                     name="password"
                     placeholder="password"
                     value={this.state.password}
@@ -44,6 +48,7 @@ class Inputs extends React.Component {
                     type="password"
                 />
                 <input
+                    className={style.input}
                     name="confirmPassword"
                     placeholder="confirmPassword"
                     value={this.state.confirmPassword}
