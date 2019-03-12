@@ -1,78 +1,58 @@
 import React from "react";
 
 class Inputs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      email: "",
-      password: "",
-      confirmPassword: ""
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: "",
+            email: "",
+            password: "",
+            confirmPassword: ""
+        };
+    }
+
+    handleChange = event => {
+        const { value } = event.target;
+        const { name } = event.target;
+        this.setState(() => ({
+            [name]: value
+        }));
     };
-  }
 
-  handleUsernameChange = event => {
-    const { value } = event.target;
-    this.setState(() => ({
-      username: value
-    }));
-  };
-
-  handleEmailChange = event => {
-    const { value } = event.target;
-    this.setState(() => ({
-      email: value
-    }));
-  };
-
-  handlePasswordChange = event => {
-    const { value } = event.target;
-    this.setState(() => ({
-      password: value
-    }));
-  };
-
-  handleConfirmPasswordChange = event => {
-    const { value } = event.target;
-    this.setState(() => ({
-      confirmPassword: value
-    }));
-  };
-
-  render() {
-    return (
-      <form>
-        <input
-          name="username"
-          placeholder="username"
-          value={this.state.username}
-          onChange={this.handleUsernameChange}
-          type="text"
-        />
-        <input
-          name="email"
-          placeholder="email"
-          value={this.state.email}
-          onChange={this.handleEmailChange}
-          type="text"
-        />
-        <input
-          name="password"
-          placeholder="password"
-          value={this.state.password}
-          onChange={this.handlePasswordChange}
-          type="text"
-        />
-        <input
-          name="confirmPassword"
-          placeholder="confirmPassword"
-          value={this.state.confirmPassword}
-          onChange={this.handleConfirmPasswordChange}
-          type="text"
-        />
-      </form>
-    );
-  }
+    render() {
+        return (
+            <form>
+                <input
+                    name="username"
+                    placeholder="username"
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                    type="text"
+                />
+                <input
+                    name="email"
+                    placeholder="email"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                    type="text"
+                />
+                <input
+                    name="password"
+                    placeholder="password"
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                    type="password"
+                />
+                <input
+                    name="confirmPassword"
+                    placeholder="confirmPassword"
+                    value={this.state.confirmPassword}
+                    onChange={this.handleChange}
+                    type="password"
+                />
+            </form>
+        );
+    }
 }
 
 export default Inputs;
