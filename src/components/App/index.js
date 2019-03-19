@@ -36,16 +36,11 @@ class App extends Component {
                     >
                         Learn React
                     </a>
-                    {/* 1 */}
-
                     <Toggle onClick={this.handleClick} isOn={this.state.isOn} />
                     <Toggle
                         onClick={this.handleClick}
                         isOn={!this.state.isOn}
                     />
-
-                    {/* 2 */}
-
                     <Inputs />
                 </header>
             </div>
